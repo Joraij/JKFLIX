@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JKFLIX - Movies</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            touch-action: pan-x pan-y;
+        }
+        .navbar {
+            background-color: #141414;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+            box-sizing: border-box;
+            z-index: 100; /* High z-index ensures it sits safely on top of all content */
+            border-bottom: 1px solid #252525;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+        }
+        .brand-logo {
+            color: #E50914;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .hero-banner {
+            height: 55vh;
+            margin-top: 70px; /* Pushes banner down so it doesn't clip underneath the navbar */
+            background: linear-gradient(to top, #141414 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%), 
+                        url('https://www.indiewire.com/wp-content/uploads/2012/06/netflix.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 4%;
+            box-sizing: border-box;
+        }
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            line-height: 1.4;
+        }
+        .play-btn {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: max-content;
+            transition: background-color 0.2s;
+        }
+        .play-btn:hover {
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* Movie Row / Catalog Wrapper */
+        .main-container {
+            padding: 40px 4% 80px 4%;
+            position: relative;
+            z-index: 2;
+        }
+        .row-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #e5e5e5;
+        }
+
+        /* Cinematic Video Card Dashboard */
+        .video-card-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #181818;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+            overflow: hidden;
+            border: 1px solid #282828;
+        }
+        .premium-player-wrapper {
+            position: relative;
+            padding-bottom: 64%; 
+            height: 0;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden; 
+            clip-path: inset(10% 0% 0% 0%); 
+        }
+        .premium-player-wrapper iframe {
+            position: absolute;
+            top: -160px; 
+            left: 0;
+            width: 100%;
+            height: calc(100% + 160px); 
+            border: none;
+        }
+        .video-metadata {
+            padding: 20px;
+            background: #181818;
+            position: relative;
+            z-index: 3;
+        }
+        .video-metadata h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.4rem;
+            color: #fff;
+        }
+        .video-tags {
+            display: flex;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #46d369;
+            font-weight: bold;
+        }
+        .maturity-rating {
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+            padding: 1px 5px;
+            font-size: 0.75rem;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="brand-logo">JKFLIX</div>
+    </div>
+
+    <div class="hero-banner">
+        <div class="hero-title">Custom Theater</div>
+        <div class="hero-description">Stream your personal collection in stunning full-frame high definition. Hosted securely on cloud servers and deployed through GitHub Pages.</div>
+        <button class="play-btn" onclick="document.getElementById('player').scrollIntoView({behavior: 'smooth'});">▼ Watch Now</button>
+    </div>
+
+    <div class="main-container" id="player">
+        <div class="row-title">Trending Now</div>
+
+        <div class="video-card-container">
+            <div class="premium-player-wrapper">
+                <iframe 
+                    src="https://pkembed.site/j1ij18l1bp2y.html" 
+                    scrolling="no" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="video-metadata">
+                <h3>Playing Now</h3>
+                <div class="video-tags">
+                    <span>98% Match</span>
+                    <span>2026</span>
+                    <span class="maturity-rating">TV-MA</span>
+                    <span style="color: #aaa; font-weight: normal;">HD • 5.1 Audio</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
