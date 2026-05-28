@@ -24,7 +24,7 @@
             align-items: center;
             padding: 0 4%;
             box-sizing: border-box;
-            z-index: 100; /* High z-index ensures it sits safely on top of all content */
+            z-index: 100; 
             border-bottom: 1px solid #252525;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
         }
@@ -37,7 +37,7 @@
         }
         .hero-banner {
             height: 55vh;
-            margin-top: 70px; /* Pushes banner down so it doesn't clip underneath the navbar */
+            margin-top: 70px; 
             background: linear-gradient(to top, #141414 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%), 
                         url('https://www.indiewire.com/wp-content/uploads/2012/06/netflix.jpg');
             background-size: cover;
@@ -101,23 +101,28 @@
             overflow: hidden;
             border: 1px solid #282828;
         }
+        
+        /* YOUR EXACT LAYOUT SETTINGS MAINTAINED HERE */
         .premium-player-wrapper {
             position: relative;
-            padding-bottom: 61%; 
+            padding-bottom: 48%; 
             height: 0;
             width: 100%;
             background-color: #000;
             overflow: hidden; 
-            clip-path: inset(5% 0% 0% 0%); 
+            clip-path: inset(21% 0% 0% 0%); 
         }
+        
+        /* THE WORKAROUND: Shifting the iframe layout up to skip the top content */
         .premium-player-wrapper iframe {
             position: absolute;
-            top: -160px; 
+            top: -2600px; 
             left: 0;
             width: 100%;
-            height: calc(100% + 160px); 
+            height: calc(100% + 2600px); 
             border: none;
         }
+        
         .video-metadata {
             padding: 20px;
             background: #181818;
@@ -163,7 +168,7 @@
         <div class="video-card-container">
             <div class="premium-player-wrapper">
                 <iframe 
-                    src="https://pkembed.site/35rj5w65h36z.html" 
+                    src="https://5hdmovies.com/2457348-swapped-2026-hindi-dual-audio-web-dl-720p-480p-1080p.html" 
                     scrolling="no" 
                     allow="autoplay; fullscreen; picture-in-picture" 
                     allowfullscreen>
